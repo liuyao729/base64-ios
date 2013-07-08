@@ -17,6 +17,7 @@
 		8946320F178AE4F9007D6DB8 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 8946320D178AE4F9007D6DB8 /* Base64.h */; };
 		89463210178AE4F9007D6DB8 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8946320E178AE4F9007D6DB8 /* Base64.m */; };
 		89463213178AE511007D6DB8 /* Base64Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89463212178AE511007D6DB8 /* Base64Tests.m */; };
+		89644CB8178B4FD2008FEB01 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 89644CB7178B4FD2008FEB01 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8946320E178AE4F9007D6DB8 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		89463211178AE511007D6DB8 /* Base64Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Tests.h; sourceTree = "<group>"; };
 		89463212178AE511007D6DB8 /* Base64Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Tests.m; sourceTree = "<group>"; };
+		89644CB7178B4FD2008FEB01 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		894631E6178AE4E1007D6DB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				89644CB7178B4FD2008FEB01 /* LICENSE */,
 				894631E7178AE4E1007D6DB8 /* Base64-Info.plist */,
 				894631E8178AE4E1007D6DB8 /* InfoPlist.strings */,
 				894631EB178AE4E1007D6DB8 /* Base64-Prefix.pch */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				894631EA178AE4E1007D6DB8 /* InfoPlist.strings in Resources */,
+				89644CB8178B4FD2008FEB01 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
