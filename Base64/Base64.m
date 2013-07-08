@@ -35,20 +35,41 @@ static char base64EncodingTable[64] = {
 	NSUInteger pos = 0;
 	
 	while (pos < dlength) {
+		unsigned int read = 1;
+		unsigned int write = 2;
 		input[0] = raw[pos++];
-		input[1] = raw[pos++];
-		input[2] = raw[pos++];
-		
+		if (pos < dlength){
+			input[1] = raw[pos++];
+			read = 2;
+			write = 3;
+		} else {
+			input[1] = 0;
+		}
+		if (pos < dlength){
+			input[2] = raw[pos++];
+			read = 3;
+			write = 4;
+		} else {
+			input[2] = 0;
+		}
 		output[0] = (input[0] & 0xFC) >> 2;
 		output[1] = ((input[0] & 0x03) << 4) | ((input[1] & 0xF0) >> 4);
 		output[2] = ((input[1] & 0x0F) << 2) | ((input[2] & 0xC0) >> 6);
 		output[3] = input[2] & 0x3F;
 		
-		for (int i=0;i<4;i++) {
+		for (int i=0;i<write;i++) {
 			[result appendString: [NSString stringWithFormat: @"%c", base64EncodingTable[output[i]]]];
 		}
+		switch (read) {
+			case 1:
+				[result appendString: @"=="];
+				break;
+			case 2:
+				[result appendString: @"="];
+				break;
+		}
 	}
-		
+
 	return result;
 }
 
