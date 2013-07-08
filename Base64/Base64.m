@@ -84,7 +84,12 @@ static const char base64DecodingTable[] =
 	if (string == nil) {
 		return nil;
 	}
-	return @"";
+	NSUInteger slength = [string length];
+	if (slength == 0) {
+		return @"";
+	}
+	const char* data = [string UTF8String];
+	return [Base64 encode:[NSData dataWithBytes:data length:slength]];
 }
 
 +(NSData*)decode:(NSString*)base64string
@@ -132,7 +137,12 @@ static const char base64DecodingTable[] =
 	if (string == nil) {
 		return nil;
 	}
-	return @"";
+	NSUInteger slength = [string length];
+	if (slength == 0) {
+		return @"";
+	}
+	NSData* data = [Base64 decode:string];	
+	return [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
 }
 
 @end

@@ -76,6 +76,19 @@
 		NSString* data = @"";
 		NSString* base64String  = [Base64 encodeString:data];
 		STAssertNotNil(base64String, @"not nil");
+		STAssertEqualObjects(@"",base64String, @"check string");
+	}
+	{
+		NSString* data = @"pleasure.";
+		NSString* base64String  = [Base64 encodeString:data];
+		STAssertNotNil(base64String, @"not nil");
+		STAssertEqualObjects(@"cGxlYXN1cmUu",base64String, @"check string");
+	}
+	{
+		NSString* data = @"leasure.";
+		NSString* base64String  = [Base64 encodeString:data];
+		STAssertNotNil(base64String, @"not nil");
+		STAssertEqualObjects(@"bGVhc3VyZS4=",base64String, @"check string");
 	}
 }
 
@@ -158,6 +171,21 @@
 		NSString* base64String = @"";
 		NSString* data  = [Base64 decodeString:base64String];
 		STAssertNotNil(data, @"not nil");
+		STAssertEqualObjects(@"", data, @"check string");
+	}
+	{
+		NSString* base64String = @"cGxlYXN1cmUu";
+		NSString* expected =  @"pleasure.";
+		NSString* data  = [Base64 decodeString:base64String];
+		STAssertNotNil(data, @"not nil");
+		STAssertEqualObjects(expected, data, @"check string");
+	}
+	{
+		NSString* base64String = @"bGVhc3VyZS4=";
+		NSString* expected =  @"leasure.";
+		NSString* data  = [Base64 decodeString:base64String];
+		STAssertNotNil(data, @"not nil");
+		STAssertEqualObjects(expected, data, @"check string");
 	}
 }
 
