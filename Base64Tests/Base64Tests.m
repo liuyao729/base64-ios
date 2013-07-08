@@ -17,14 +17,12 @@
 		NSData* data = nil;
 		NSString* base64String  = [Base64 encode:data];
 		STAssertNil(base64String, @"nil");
-	}
-	
+	}	
 	{
 		NSData* data = [NSData alloc];
 		NSString* base64String  = [Base64 encode:data];
 		STAssertNotNil(base64String, @"not nil");
-	}
-	
+	}	
 	{
 		unsigned char ch1[] = { 0x00, 0x00, 0x00 };
 		NSData* data = [[NSData alloc] initWithBytes:ch1
@@ -33,7 +31,14 @@
 		STAssertNotNil(base64String, @"not nil");
 		STAssertEqualObjects(@"AAAA", base64String, @"check string");
 	}
-	
+	{
+		unsigned char ch1[] = { 0xFF, 0xFF, 0xFF };
+		NSData* data = [[NSData alloc] initWithBytes:ch1
+											  length:sizeof(ch1)];
+		NSString* base64String  = [Base64 encode:data];
+		STAssertNotNil(base64String, @"not nil");
+		STAssertEqualObjects(@"////", base64String, @"check string");
+	}
 	{
 		unsigned char ch1[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 		NSData* data = [[NSData alloc] initWithBytes:ch1
@@ -41,8 +46,7 @@
 		NSString* base64String  = [Base64 encode:data];
 		STAssertNotNil(base64String, @"not nil");
 		STAssertEqualObjects(@"AAAAAAAA", base64String, @"check string");
-	}
-	
+	}	
 	{
 		unsigned char ch1[] = { 0x00, 0x00 };
 		NSData* data = [[NSData alloc] initWithBytes:ch1
@@ -50,8 +54,7 @@
 		NSString* base64String  = [Base64 encode:data];
 		STAssertNotNil(base64String, @"not nil");
 		STAssertEqualObjects(@"AAA=", base64String, @"check string");
-	}
-	
+	}	
 	{
 		unsigned char ch1[] = { 0x00 };
 		NSData* data = [[NSData alloc] initWithBytes:ch1
@@ -82,11 +85,49 @@
 		NSString* base64String = nil;
 		NSData* data  = [Base64 decode:base64String];
 		STAssertNil(data, @"nil");
-	}
+	}	
 	{
 		NSString* base64String = @"";
 		NSData* data  = [Base64 decode:base64String];
 		STAssertNotNil(data, @"not nil");
+	}
+	{
+		unsigned char ch1[] = { };
+		NSData* expectedData = [[NSData alloc] initWithBytes:ch1
+													  length:sizeof(ch1)];
+		NSString* base64String = @"";
+		NSData* data  = [Base64 decode:base64String];
+		STAssertNotNil(data, @"not nil");
+		STAssertEqualObjects(expectedData, data, @"compare data");
+	}
+	{
+		unsigned char ch1[] = { 0x00, 0x00, 0x00 };
+		NSData* expectedData = [[NSData alloc] initWithBytes:ch1
+											  length:sizeof(ch1)];
+		NSString* base64String = @"AAAA";
+		NSData* data  = [Base64 decode:base64String];
+		STAssertNotNil(data, @"not nil");
+		STAssertEqualObjects(expectedData, data, @"compare data");
+	}
+	{
+		unsigned char ch1[] = { 0xFF, 0xFF, 0xFF };
+		NSData* expectedData = [[NSData alloc] initWithBytes:ch1
+													  length:sizeof(ch1)];
+		NSString* base64String = @"////";
+		NSData* data  = [Base64 decode:base64String];
+		STAssertNotNil(data, @"not nil");
+		STAssertEqualObjects(expectedData, data, @"compare data");
+	}
+	{
+		unsigned char ch1[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+		NSData* expectedData = [[NSData alloc] initWithBytes:ch1
+													  length:sizeof(ch1)];
+		NSString* base64String = @"AAAAAAAA";
+		NSData* data  = [Base64 decode:base64String];
+		STAssertNotNil(data, @"not nil");
+		STAssertEqualObjects(expectedData, data, @"compare data");
+	}
+	{
 	}
 }
 
