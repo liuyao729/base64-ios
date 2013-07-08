@@ -96,6 +96,8 @@ static const char base64DecodingTable[] =
 	if (slength == 0 ){
 		return [[NSData alloc] init];
 	}
+	NSUInteger read;
+	char c;
 	unsigned char input[4], output[3];
 	const char* raw = [base64string UTF8String];
 	NSMutableData* data = [[NSMutableData alloc] init];
@@ -103,12 +105,25 @@ static const char base64DecodingTable[] =
 	while (pos < slength) {
 		input[0] = base64DecodingTable[raw[pos++]];
 		input[1] = base64DecodingTable[raw[pos++]];
-		input[2] = base64DecodingTable[raw[pos++]];
-		input[3] = base64DecodingTable[raw[pos++]];		
+		c = raw[pos++];
+		read = 1;
+		if (c == '=') {
+			input[2] = 0;
+		} else {
+			input[2] = base64DecodingTable[c];
+			read = 2;
+		}
+		c = raw[pos++];
+		if (c == '=') {
+			input[3] = 0;
+		} else {
+			input[3] = base64DecodingTable[c];
+			read = 3;
+		}
 		output[0] = ((input[0] << 2) & 0xFC) | ((input[1] >> 4) & 0x03);
 		output[1] = ((input[1] << 4) & 0xF0) | ((input[2] >> 2) & 0x0F);
 		output[2] = ((input[2] << 6) & 0xC0) | ((input[3] >> 0 & 0x3F));
-		[data appendBytes:output length:3];
+		[data appendBytes:output length:read];
 	}
 	return data;
 }
