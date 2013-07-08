@@ -10,14 +10,36 @@
 
 @implementation Base64
 
-+(NSData*)encode:(NSString*)base64string
++(NSString*)encode:(NSData*)data
 {
-	return nil;
+	if (data == nil) {
+		return nil;
+	}
+//	NSString* values = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+	return @"";
 }
 
-+(NSString*)decode:(NSData*)data
++(NSString *)encodeString:(NSString *)string
 {
-	return nil;
+	if (string == nil) {
+		return nil;
+	}
+	return @"";
+}
+
++(NSData*)decode:(NSString*)base64string
+{
+	if (base64string == nil) {
+		return nil;
+	}
+	return [NSData alloc];
+}
+
++(NSString *)decodeString:(NSString *)string {
+	if (string == nil) {
+		return nil;
+	}
+	return @"";
 }
 
 @end
