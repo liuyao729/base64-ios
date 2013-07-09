@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		894631E4178AE4E1007D6DB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894631E3178AE4E1007D6DB8 /* Foundation.framework */; };
-		894631EA178AE4E1007D6DB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 894631E8178AE4E1007D6DB8 /* InfoPlist.strings */; };
 		894631F3178AE4E1007D6DB8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894631F2178AE4E1007D6DB8 /* SenTestingKit.framework */; };
 		894631F5178AE4E1007D6DB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894631F4178AE4E1007D6DB8 /* UIKit.framework */; };
 		894631F6178AE4E1007D6DB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894631E3178AE4E1007D6DB8 /* Foundation.framework */; };
 		894631FB178AE4E1007D6DB8 /* Base64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894631E0178AE4E1007D6DB8 /* Base64.framework */; };
 		89463201178AE4E1007D6DB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 894631FF178AE4E1007D6DB8 /* InfoPlist.strings */; };
-		8946320F178AE4F9007D6DB8 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 8946320D178AE4F9007D6DB8 /* Base64.h */; };
+		8946320F178AE4F9007D6DB8 /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 8946320D178AE4F9007D6DB8 /* Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89463210178AE4F9007D6DB8 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8946320E178AE4F9007D6DB8 /* Base64.m */; };
 		89463213178AE511007D6DB8 /* Base64Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89463212178AE511007D6DB8 /* Base64Tests.m */; };
 		89644CB8178B4FD2008FEB01 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 89644CB7178B4FD2008FEB01 /* LICENSE */; };
@@ -40,9 +39,6 @@
 /* Begin PBXFileReference section */
 		894631E0178AE4E1007D6DB8 /* Base64.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = Base64.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		894631E3178AE4E1007D6DB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		894631E7178AE4E1007D6DB8 /* Base64-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Base64-Info.plist"; sourceTree = "<group>"; };
-		894631E9178AE4E1007D6DB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		894631EB178AE4E1007D6DB8 /* Base64-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Base64-Prefix.pch"; sourceTree = "<group>"; };
 		894631F1178AE4E1007D6DB8 /* Base64Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Base64Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		894631F2178AE4E1007D6DB8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		894631F4178AE4E1007D6DB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -121,9 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				89644CB7178B4FD2008FEB01 /* LICENSE */,
-				894631E7178AE4E1007D6DB8 /* Base64-Info.plist */,
-				894631E8178AE4E1007D6DB8 /* InfoPlist.strings */,
-				894631EB178AE4E1007D6DB8 /* Base64-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,7 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				894631EA178AE4E1007D6DB8 /* InfoPlist.strings in Resources */,
 				89644CB8178B4FD2008FEB01 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,14 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		894631E8178AE4E1007D6DB8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				894631E9178AE4E1007D6DB8 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		894631FF178AE4E1007D6DB8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -422,8 +406,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "Base64/Base64-Prefix.pch";
-				INFOPLIST_FILE = "Base64/Base64-Info.plist";
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -442,8 +426,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "Base64/Base64-Prefix.pch";
-				INFOPLIST_FILE = "Base64/Base64-Info.plist";
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
