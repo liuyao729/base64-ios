@@ -15,6 +15,8 @@
 		89463210178AE4F9007D6DB8 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8946320E178AE4F9007D6DB8 /* Base64.m */; };
 		89463213178AE511007D6DB8 /* Base64Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89463212178AE511007D6DB8 /* Base64Tests.m */; };
 		89644CB8178B4FD2008FEB01 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 89644CB7178B4FD2008FEB01 /* LICENSE */; };
+		898FA5B1178C7E3C009FC3D7 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 898FA5AF178C7E3C009FC3D7 /* Makefile */; };
+		898FA5B2178C7E3C009FC3D7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 898FA5B0178C7E3C009FC3D7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		89463211178AE511007D6DB8 /* Base64Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Tests.h; sourceTree = "<group>"; };
 		89463212178AE511007D6DB8 /* Base64Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Tests.m; sourceTree = "<group>"; };
 		89644CB7178B4FD2008FEB01 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		898FA5AF178C7E3C009FC3D7 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
+		898FA5B0178C7E3C009FC3D7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 		894631E6178AE4E1007D6DB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				898FA5AF178C7E3C009FC3D7 /* Makefile */,
+				898FA5B0178C7E3C009FC3D7 /* README.md */,
 				89644CB7178B4FD2008FEB01 /* LICENSE */,
 			);
 			name = "Supporting Files";
@@ -211,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89644CB8178B4FD2008FEB01 /* LICENSE in Resources */,
+				898FA5B2178C7E3C009FC3D7 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89463210178AE4F9007D6DB8 /* Base64.m in Sources */,
+				898FA5B1178C7E3C009FC3D7 /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

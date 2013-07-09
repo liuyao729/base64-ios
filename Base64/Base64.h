@@ -30,10 +30,10 @@
 
 @interface Base64 : NSObject
 
-+(NSString*)encode:(NSData*)data;
-+(NSString *)encodeString:(NSString *)string;
++ (NSString*)encode:(NSData*)data;
++ (NSString*)encodeString:(NSString*)string;
 
-+(NSData*)decode:(NSString*)string;
-+(NSString *)decodeString:(NSString *)string;
++ (NSData*)decode:(NSString*)string;
++ (NSString*)decodeString:(NSString*)string;
 
 @end
