@@ -187,7 +187,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = de.benjaminborbe;
 			};
-			buildConfigurationList = 894631D7178AE4E1007D6DB8 /* Build configuration list for PBXProject "Base64" */;
+			buildConfigurationList = 894631D7178AE4E1007D6DB8 /* Build configuration list for PBXProject "Base64 for iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -441,7 +441,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		894631D7178AE4E1007D6DB8 /* Build configuration list for PBXProject "Base64" */ = {
+		894631D7178AE4E1007D6DB8 /* Build configuration list for PBXProject "Base64 for iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89463205178AE4E1007D6DB8 /* Debug */,
