@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2013, Benjamin Borbe
+//  Copyright (c) 2013, Benjamin Borbe <bborbe@rocketnews.de>
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
