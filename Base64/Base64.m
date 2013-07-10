@@ -49,8 +49,7 @@ static const char base64DecodingTable[] =
     41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 99, 99, 99, 99, 99
 };
 
-+ (NSString*)encode:(NSData*)data
-{
++ (NSString*)encode:(NSData*)data {
     if (data == nil)
     {
         return nil;
